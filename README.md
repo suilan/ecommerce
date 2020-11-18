@@ -7,17 +7,47 @@
 - Spring Boot
 - Lombok
 - JPA
-- Jupiter
 - Docker
 - Mysql 8.*
 
-## Instalation
+## Installation
+- Clone the project on GitHub:
+```
+git clone git@github.com:suilan/ecommerce.git
+```
+- To run the database:
+```
+docker-compose up
+```
+- In the **backend** folder:
+```
+mvn compile && mvn package
+```
+- In the **frontend** folder:
+```
+npm install
+```
 
-## Configuration
-### Docker
-- MySql instance with docker compose
-https://medium.com/@chrischuck35/how-to-create-a-mysql-instance-with-docker-compose-1598f3cc1bee#:~:text=In%20your%20command%20line%20or,instance%20running%20on%20localhost%3A3306%20.
+## Run
+- To run the **backend**:
+```
+java -jar target/ecommerce-0.0.1-SNAPSHOT.jar
+```
+- To run the **frontend**:
+```
+ng serve -o
+```
 
-## Use
+## Doc
 - [REST API Documentation](http://localhost:8080/ecommerce/swagger-ui.html)
-- Docker Mysql - docker run --name ecommerce-database -e MYSQL_ROOT_PASSWORD=Ex@mpl3DB -d mysql:v1.0.0
+- [Postman Tests](./E-commerce.postman_collection.json)
+- Github Project - https://github.com/suilan/ecommerce
+
+## Main difficulties
+- The business/domain rules, changed multiple times
+- Build the relations @OneToMany - @ManyToOne on backend
+- CORS Globally on backend
+- Auth on backend
+- Organize the Dockerfile and docker-compose.yml
+
+

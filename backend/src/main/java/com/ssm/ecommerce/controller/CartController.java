@@ -14,8 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor // Lowbok
 @Api(value = "Purchase - E-commerce")
 @RequestMapping("cart")
-@CrossOrigin(origins = "*")
-
 /**
  * Controller to manipulate shopping cart
  */
@@ -29,7 +27,7 @@ public class CartController {
      * @return Returns the shopping cart
      */
     @GetMapping("/{purchaseId}")
-//    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Purchase> getShoppingCart(@PathVariable Long purchaseId){
         return ResponseEntity.ok(purchaseService.findShoppingCartById(purchaseId));
     }
