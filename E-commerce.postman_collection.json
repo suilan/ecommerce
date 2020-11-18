@@ -1,0 +1,169 @@
+{
+	"variables": [],
+	"info": {
+		"name": "E-commerce",
+		"_postman_id": "9e41945b-8f7a-ae12-bbee-178bc927cc86",
+		"description": "Test API to the E-commerce project\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"description": "",
+			"item": [
+				{
+					"name": "save shopping cart",
+					"request": {
+						"url": "http://localhost:8080/ecommerce/cart/1",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dXN1YXJpbzoxMjM0NTY=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"product\": {\n\t\t\t\"id\":1\n\t\t},\n\t\t\"total\":1\n\t}\n]\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "shoppingCart - Add Product",
+					"request": {
+						"url": "http://localhost:8080/ecommerce/shopping-cart/1/product",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dXN1YXJpbzoxMjM0NTY=",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"total\":1,\n\t\t\"product\":{\n\t\t\t\"id\":2\n\t\t}\n\t}\t\n]"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get shopping cart",
+					"request": {
+						"url": "http://localhost:8080/ecommerce/cart/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic dXN1YXJpbzoxMjM0NTY=",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart - Delete Product",
+					"request": {
+						"url": "http://localhost:8080/ecommerce/shopping-cart/5/product",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"id\":8\n\t},\n\t{\n\t\t\"id\":9\n\n\t}\t\n]"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart - Checkout",
+					"request": {
+						"url": "http://localhost:8080/ecommerce/shopping-cart/1/checkout",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"description": "",
+			"item": [
+				{
+					"name": "Customer | Get By Id",
+					"request": {
+						"url": "http://localhost:8080/ecommerce/customer/1",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Customer | Get Orders",
+					"request": {
+						"url": "http://localhost:8080/ecommerce/customer/1/order",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"description": "",
+			"item": [
+				{
+					"name": "product-listAll",
+					"request": {
+						"url": "",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
